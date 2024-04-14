@@ -2,6 +2,8 @@
 
 In this challenge, Python and unsupervised learning techniques were employed to predict whether cryptocurrencies are influenced by 24-hour or 7-day price changes.
 
+<img width="293" alt="Cryptocurrencies " src="https://github.com/MarcoN16/CryptoClustering/assets/150491559/4eb5a920-3b1a-4582-a51e-6c71489d6d8e">
+
  ## Prepare the Data
 -	Utilized the StandardScaler() module from scikit-learn to normalize the data extracted from the CSV file.
 -	Constructed a DataFrame with the normalized data and designated the "coin_id" index from the original DataFrame as the index for the new DataFrame.
@@ -12,6 +14,9 @@ I applied the elbow method to ascertain the optimal value for k, utilizing two d
 -	Utilized a for loop to compute the inertia for each k value.
 -	Created a dictionary with the data necessary to plot the elbow curve.
 -	Plotted a line chart displaying the inertia values against the different values of k to visually identify the optimal k value.
+
+<img width="254" alt="Elbow_method_scaled_data" src="https://github.com/MarcoN16/CryptoClustering/assets/150491559/7f24deff-f38f-482c-8889-4bc38233baf5">
+
 
 ## Cluster Cryptocurrencies with K-means Using the Original Scaled Data
 Implemented the following steps to cluster cryptocurrencies based on the optimal k value and original scaled data:
@@ -24,6 +29,9 @@ Implemented the following steps to cluster cryptocurrencies based on the optimal
   2	Color-coded graph points based on the K-means labels.
   3	Included the "coin_id" column in the hover_cols parameter to identify each represented cryptocurrency.
 
+  <img width="247" alt="Clustering_scaled_data" src="https://github.com/MarcoN16/CryptoClustering/assets/150491559/846d1a2b-28eb-4bf4-8a13-967a19d6637a">
+
+
 ## Optimize Clusters with Principal Component Analysis
 -	Performed PCA on the original scaled DataFrame to reduce features to three principal components.
 -	Extracted the explained variance to assess the information attributed to each principal component.
@@ -31,6 +39,9 @@ Implemented the following steps to cluster cryptocurrencies based on the optimal
 
 ## Find the Best Value for k Using the PCA Data
 Applied the elbow method to identify the optimal k value for the model.
+
+<img width="245" alt="Elbow_method_PCA_data" src="https://github.com/MarcoN16/CryptoClustering/assets/150491559/efec3c4f-adf0-4ce1-879e-8e288f50280e">
+
 
 ## Cluster Cryptocurrencies with K-means Using the PCA Data
 Utilized the following steps to cluster cryptocurrencies based on the optimal k value and PCA data:
@@ -42,6 +53,9 @@ Utilized the following steps to cluster cryptocurrencies based on the optimal k 
   1	x-axis set as "PC1" and y-axis as "PC2".
   2	Color-coded graph points based on the K-means labels.
   3	Included the "coin_id" column in the hover_cols parameter to identify each represented cryptocurrency.
+
+  <img width="245" alt="Clustering_PCA_data" src="https://github.com/MarcoN16/CryptoClustering/assets/150491559/044b15a7-cdd8-4b52-8cb8-0bb3ba64438d">
+
 
 ## Conclusion
 The analysis indicates that the two methods employed to cluster cryptocurrencies yield similar results. The k-means model applied to predict clusters showed consistent outcomes in both datasets, whether the data were normalized or subjected to PCA. Nonetheless, in the PCA plot, the data points exhibit reduced spread compared to the original data, suggesting that PCA primarily influences data visualization in reduced dimensions rather than altering the inherent properties of the clusters.
